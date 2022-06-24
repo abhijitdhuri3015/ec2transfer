@@ -34,7 +34,3 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
-          
-      # Runs a set of commands using the runners shell          
-      - name: Deploy to Ec2 Server
-        run: npm --version > /riscore/version.log
