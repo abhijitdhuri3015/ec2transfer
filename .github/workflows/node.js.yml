@@ -16,4 +16,4 @@ jobs:
     - name: run os commands
       run: |
         cd /home/ubuntu
-        touch test
+        touch test123
