@@ -4,9 +4,12 @@
 name: Node.js CD
 
 on:
-  push:
-    branches: [ "master" ]
-    
+  workflow_run:
+    workflows: ["github-actions-ec2"]
+    branches: ["master"]
+    types:
+      - completed
+
 jobs:
   build:
 
@@ -15,5 +18,6 @@ jobs:
     steps:
     - name: run os commands
       run: |
-        cd /home/ubuntu
-        touch test123
+        cd /home/ubuntu/myfiles
+        mkdir backupdir
+        cp *.* backupdir
